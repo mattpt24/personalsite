@@ -258,7 +258,7 @@ h2 {
 
     .hero-right {
         width: 40vw;
-        background: url("/dist/images/me2.jpg");
+        background: url("../../me2.jpg");
         background-size: contain;
         background-position: bottom center;
         background-repeat: no-repeat;
@@ -270,7 +270,7 @@ h2 {
         display: flex;
         justify-content: center;
         flex-direction: column;
-        background: url("/dist/images/hero-left-bg.png");
+        background: url("../../hero-left-bg.png");
         background-size: cover;
         background-position: center center;
 
