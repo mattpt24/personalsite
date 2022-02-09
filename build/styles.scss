@@ -1,0 +1,458 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: $font1;
+}
+
+// NAVBAR
+
+nav {
+padding: 20px 0;
+background: #000;
+backdrop-filter: blur(10px);
+color: $light;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+border-bottom: solid 2px $primary;
+z-index: 1;
+
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.dropdown-btn {
+    font-size: 1.8rem;
+    padding-right: 10px;
+}
+
+}
+
+.surname {
+    color: $primary;
+}
+
+
+// DROPDOWN MENU
+
+.dropdown-container {
+    transition: all 1s ease;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(0,0,0,0.96);
+    width: 100vw;
+    height: 100vh;
+    z-index: 90;
+    transform: translateY(-100vh);
+
+    .matt {
+        color: $light;
+        font-weight: $medium;
+    }
+
+    .nav-links {
+        opacity: 0;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        line-height: 80px;
+        list-style: none;
+        text-align: center;
+        align-items: center;
+
+         .nav-link{
+            transition: all .3s ease;
+             font-size: $mediumtext;
+             text-decoration: none;
+             color: $light;
+             position: relative;
+             z-index: 0;
+             padding: 10px 10px;
+
+             &:after {
+                 transition: all .3s ease;
+                 content: "";
+                 position: absolute;
+                 bottom: 5px;
+                 left: 0;
+                 width: 100%;
+                 height: 0;
+                 background: slateblue;
+                 background: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(96, 0, 250) 50%, rgb(173, 50, 255) 100%);
+                 z-index: -1;
+             }
+
+             &:hover:after {
+                 transition: all .3s ease;
+                 height: 40px;
+             }
+
+             &:hover {
+                 transition: all .3s ease;
+             }
+         }
+    }
+
+    .close-btn {
+        @include button(none, $light);
+        position: absolute;
+        top: 10px;
+        right: -10px;
+        font-size: $mediumtext;
+
+        &:hover {
+            background: none;
+            color: $secondary;
+        }
+    }
+
+
+    .get-in-touch-btn {
+        @include button($primary, $light);
+    }
+}
+
+.active {
+    transition: all 1s ease;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+
+// CONTACT DROPDOWN
+
+.contact-dropdown-container {
+    transition: all 1s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    color: $light;
+    background: #000000;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+    transform: translateX(-100vw);
+
+    .contact-title {
+        font-size: $bigtext;
+        background: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(0, 250, 154) 50%, rgba(0,255,113,1) 100%);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+
+        @media screen and (max-width:500px) {
+            font-size: 3rem;
+        }
+    }
+
+    input {
+        font-family: $font1;
+       border: none;
+       outline: none;
+       font-size: $mediumtext;
+       background: none;
+       text-align: center;
+       color: $light;
+       margin-top: 20px;
+
+       &::selection {
+           background: none;
+           color: $secondary;
+       }
+    }
+
+    .copy-btn {
+    @include button($primary, $light);
+    margin: 20px;
+    }
+
+    .copied-text {
+        background: $secondary;
+        box-shadow: 0 0 30px $secondary;
+    }
+
+    .contact-close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        outline: none;
+        border: none;
+        color: $light;
+        font-size: $mediumtext;
+
+        &:hover {
+            transition: all .3s ease;
+            color: $secondary;
+            cursor: pointer;
+        }
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 40px;
+    }
+
+    .icon {
+        transition: all .3s ease;
+        background: $primary;
+        color: white;
+        font-size: $mediumtext;
+        padding: 10px;
+        border-radius: 100%;
+
+        &:hover {
+            transition: all .3s ease;
+            background: $secondary;
+        }
+    }
+}
+
+.open-contact-container {
+    transition: all 1s ease;
+    transform: translateX(0);
+}
+
+
+// HERO
+
+#hero {
+    height: 100vh;
+    background: #000000;
+    background-size: cover;
+    background-position: bottom center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+
+
+    .hero-left,
+    .hero-right {
+        height: 100vh;
+    }
+
+    .hero-right {
+        width: 40vw;
+        background: url("/dist/images/me2.jpg");
+        background-size: contain;
+        background-position: bottom center;
+        background-repeat: no-repeat;
+    }
+
+    .hero-left {
+        width: 50vw;
+        padding: 100px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background: url("/dist/images/hero-left-bg.png");
+        background-size: cover;
+        background-position: center center;
+
+        .left-content-container {
+            z-index: 0;
+        }
+    }
+
+    .hero-title {
+        font-size: $bigtext;
+        font-weight: bold;
+        letter-spacing: 10px;
+    }
+
+    .sml {
+        font-size: $smalltext;
+        font-weight: $medium;
+        letter-spacing:normal;
+        color: $light;
+        animation: enterText 1s;
+    }
+
+    .large {
+        background: slateblue;
+        background: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(0, 250, 154) 50%, rgba(0,255,113,1) 100%);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            opacity: 0;
+            animation: enterText 1s;
+            animation-fill-mode: forwards;
+            animation-delay: .5s;
+    }
+
+
+
+
+    .hero-subtitle { 
+        font-size: $mediumtext;
+        color: $light;
+        padding: 10px 0;
+        font-weight: $regular;
+        opacity: 0;
+        animation: enterText 1s;
+        animation-fill-mode: forwards;
+        animation-delay: 1s;
+    }
+    
+
+
+    .about-me-btn {
+        @include button($primary, $light);
+        margin-top: 20px;
+        max-width: 200px;
+        opacity: 0;
+        animation: enterText 1s, gradientAnimation 5s infinite;;
+        animation-fill-mode: forwards;
+        animation-delay: 1s;
+        background: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(96, 0, 250) 50%, rgba(0,255,113,1) 100%);
+        background-size: 500% 500%;
+    }
+
+    @keyframes gradientAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .wave {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        pointer-events: none;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+
+nav {
+    padding: 20px 0;
+}
+
+    #hero {
+        height: auto;
+        flex-direction: column;
+
+    
+        .hero-right {
+           height: 50vh;
+           width: 100vw;
+           background-position: bottom center;
+        }
+    
+        .hero-left {
+            width: 100vw;
+            height: 100vh;
+            padding: 30px;
+            background-position: center center;
+        }
+
+    .wave {
+        display: none;
+    }
+    }
+
+}
+
+
+
+
+@keyframes enterText {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s;
+    animation-delay: 1s;
+    animation-fill-mode:forwards ;
+}

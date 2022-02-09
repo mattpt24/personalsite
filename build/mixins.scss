@@ -1,0 +1,19 @@
+@mixin button($bg, $color) {
+    transition: all .5s ease;
+    padding: 0.5rem 2rem;
+    outline: none;
+    border-radius: 30px;
+    background: $bg;
+    color: $color;
+    font-size: $smalltext;
+    font-family: $font1; 
+    border: none;
+
+    &:hover {
+        transition: all .5s ease;
+        opacity: 0.85;
+        cursor: pointer; 
+        background: $secondary;
+        color: $light;
+    }
+} 
