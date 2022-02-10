@@ -157,9 +157,7 @@ h2 {
 
     .contact-title {
         font-size: $bigtext;
-        background: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(0, 250, 154) 50%, rgba(0,255,113,1) 100%);
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
+        @include gradientText;
 
         @media screen and (max-width:500px) {
             font-size: 3rem;
@@ -295,9 +293,8 @@ h2 {
 
     .large {
         background: slateblue;
-        background: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(0, 250, 154) 50%, rgba(0,255,113,1) 100%);
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
+        @include gradientText;
+
             opacity: 0;
             animation: enterText 1s;
             animation-fill-mode: forwards;
@@ -357,16 +354,87 @@ h2 {
 
 
 
+// ABOUT DROPDOWN
 
 
+.about-me-dropdown {
+    transition: all 1s ease;
+    color: white;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    transform: translateX(-100vw);
+}
 
+.download-cv-btn {
+    @include button($primary, $light);
+    border: solid 2px $primary;
+    margin-right: 20px;
 
+    &:hover {
+        transition: all .3s ease;
+        background: $secondary;
+        border-color: $secondary;
+    }
+}
 
+.about-back-btn {
+    @include button(none, $primary);
+    border: solid 2px $primary;
 
+    &:hover {
+        transition: all .3s ease;
+        background: $primary;
+    }
+}
 
+.left-side,
+.right-side {
+    width: 50vw;
+}
 
+.left-side {
+    background: url("../../hero-left-bg.png");
+    background-size: cover;
+    background-position: center center;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
+    .about-me-title {
+        font-size: 4rem;
+        @include gradientText;
+    }
 
+    p {
+        font-size: 1.4rem;
+    }
+}
+
+.right-side {
+    border: solid 1px right;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .about-me-img {
+        display: block;
+        width: 30vw;
+    }
+}
+
+.left-side .about-me-text {
+    margin: 30px 0;
+}
 
 
 
