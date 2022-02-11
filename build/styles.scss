@@ -474,7 +474,7 @@ nav {
 }
 
     #hero {
-        height: auto;
+        height: 100vh;
         flex-direction: column;
 
     
@@ -510,7 +510,8 @@ nav {
 
         .left-side {
             background-size: cover;
-            background-position: right center;
+            background-position: center center;
+            background-size: 150%;
             padding: 20px;
             width: 100vw;
             height: 70vh;
@@ -528,13 +529,14 @@ nav {
         }
 
         .right-side {
+            box-sizing: border-box;
             width: 100vw;
             height: 40vh;
             background: url("../../about-me-mobile-pic.png");
             background-size: cover;
             background-position: center center;
             width: 100%;
-            border-top: solid 5px $primary;
+            border: solid 5px $primary;
 
             .about-me-img {
                 display: none;
