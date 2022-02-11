@@ -386,13 +386,15 @@ h2 {
 }
 
 .about-back-btn {
-    @include button(none, $primary);
-    border: solid 2px $primary;
+    @include button(none, $light);
     text-decoration: none;
+    position: absolute;
+    top: 10px;
+    right: -5px;
 
     &:hover {
         transition: all .3s ease;
-        background: $primary;
+        color: $secondary;
     }
 }
 
@@ -477,6 +479,7 @@ nav {
 
     
         .hero-right {
+            display: none;
            height: 50vh;
            width: 100vw;
            background-position: bottom center;
@@ -492,6 +495,42 @@ nav {
     .wave {
         display: none;
     }
+    }
+
+    .about-me-dropdown {
+        flex-direction: column;
+
+        .left-side {
+            background-size: cover;
+            background-position: right center;
+            padding: 20px;
+            width: 100vw;
+            height: 70vh;
+
+            .about-me-title {
+                font-size: 3rem;
+            }
+        }
+
+        .buttons {
+            a {
+                display: inline-block;
+                margin-bottom: 10px;
+            }
+        }
+
+        .right-side {
+            width: 100vw;
+            height: 30vh;
+            background: url("../../about-me-mobile-pic.png");
+            background-position: center center;
+            width: 100%;
+            border-top: solid 5px $primary;
+
+            .about-me-img {
+                display: none;
+            }
+        }
     }
 
 }

@@ -11,9 +11,7 @@
 
     &:hover {
         transition: all .5s ease;
-        opacity: 0.85;
         cursor: pointer; 
-        background: $secondary;
         color: $light;
     }
 } 
