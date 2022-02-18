@@ -10,9 +10,21 @@ const copyBtn = document.querySelector(".copy-btn");
 const aboutBackButton = document.querySelector(".about-back-btn");
 const aboutLink = document.querySelector(".about-link");
 const aboutDropdownContainer = document.querySelector(".about-me-dropdown");
+const skillsDropdownContainer = document.querySelector(".skills-main-container");
+const skillsLink = document.querySelector(".skills-link");
+const skillsBackButton = document.querySelector(".skills-back-btn");
 
 
 
+
+// SKILLS DROPDOWN 
+const openSkillsDropdown = () => {
+    skillsDropdownContainer.classList.add("open-skills-container");
+}
+
+const closeSkillsDropdown = () => {
+    skillsDropdownContainer.classList.remove("open-skills-container");
+}
 
 
 
@@ -51,7 +63,6 @@ const openDropdown = () => {
 const closeDropdown = () => {
     dropdown.classList.remove("active");
     navLinks.classList.remove("fade-in");
-
 }
 
 
@@ -79,6 +90,9 @@ contactCloseBtn.addEventListener("click", closeContactDropdown);
 copyBtn.addEventListener("click", copyText);
 aboutLink.addEventListener("click", openAboutDropdown);
 aboutBackButton.addEventListener("click", closeAboutDropdown);
+skillsLink.addEventListener("click", openSkillsDropdown);
+skillsBackButton.addEventListener("click", closeSkillsDropdown);
+
 
 
 
