@@ -7,6 +7,9 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- ANIMATE.CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="./dist/css/styles.css">
@@ -71,13 +74,15 @@
     <div class="about-me-dropdown">
         <div class="left-side">
             <div>
-                <h1 class="about-me-title">About Me</h1>
+                <h1 class="dropdown-titles">About Me</h1>
+                <div class="about-me-text-container">
                 <p class="about-me-text"> Lorem ipsum corem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
                     scelerisque consequat diam at eleifend.</p>
                 <p class="about-me-text"> Lorem ipsum corem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
                     scelerisque consequat diam at eleifend. Fusce malesuada commodo diam at auctor. Donec laoreet nisl
                     odio, eget dignissim velit convallis a. Integer ac bibendum justo. Phasellus consectetur.</p>
-                <div class="buttons">
+                </div>
+                    <div class="buttons">
                     <a href="mattpersellthompson-cv.pdf" class="download-cv-btn" download="">Download CV</a>
                     <a href="#" class="about-back-btn"><i class="fas fa-times"></i></a>
                 </div>
@@ -120,11 +125,11 @@
     <button class="skills-back-btn skills-close-btn"><i class="fas fa-times"></i></button>
 
     <div class="skills-section-text">
-        <h1  style="font-size: 4.5rem" class="skills-title">Skills</h1>
+        <h1  class="dropdown-titles">Skills</h1>
         </div>
         
         <div class="skills">
-            <div class="skill-square">
+            <div class="skill-square"> 
               <i style="color: #E96228" class="fa-brands fa-html5 icon"></i>
               <p>HTML</p>
             </div>
@@ -152,7 +157,7 @@
             </div>
         </div>
         
-        <div class="skills">
+        <div class="bottom skills">
             <div class="skill-square">
                 <i style="color: #EFD81D" class="fa-brands fa-js-square icon"></i>
                  <p>Javascript</p>

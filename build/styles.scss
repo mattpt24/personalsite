@@ -12,6 +12,16 @@ html {
     font-family: $font1;
 }
 
+.dropdown-titles {
+    @include gradientText;
+        opacity: 0;
+        animation: enterText 1s, gradientAnimation 6s infinite;
+        background-size: 300% 300%;
+        animation-fill-mode: forwards;
+        animation-delay: .5s;
+        font-size: 5rem;  
+}
+
 // NAVBAR
 
 nav {
@@ -91,17 +101,18 @@ h2 {
                  content: "";
                  position: absolute;
                  bottom: 5px;
-                 left: 0;
-                 width: 100%;
-                 height: 0;
+                 right: 0;
+                 width: 0%;
+                 height: 40px;
                  background: slateblue;
-                 background: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(96, 0, 250) 50%, rgb(173, 50, 255) 100%);
+                 background: linear-gradient(90deg, rgb(85, 1, 219) 50%, rgb(146, 37, 255) 100%);
                  z-index: -1;
              }
 
              &:hover:after {
                  transition: all .3s ease;
-                 height: 40px;
+                 width: 100%;
+                 left: 0;
              }
 
              &:hover {
@@ -295,11 +306,11 @@ h2 {
 
     .large {
         @include gradientText;
-
             opacity: 0;
-            animation: enterText 1s;
+            animation: enterText 1s, gradientAnimation 8s infinite;
+            background-size: 300% 300%;
             animation-fill-mode: forwards;
-            animation-delay: .5s;
+            animation-delay: .5s;        
     }
 
 
@@ -319,6 +330,7 @@ h2 {
 
 
     .about-me-btn {
+        transition: all .3s ease;
         @include button($primary, $light);
         margin-top: 20px;
         max-width: 200px;
@@ -328,6 +340,11 @@ h2 {
         animation-delay: 1s;
         background: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(96, 0, 250) 50%, rgba(0,255,113,1) 100%);
         background-size: 500% 500%;
+
+        &:hover {
+            transition: all .3s ease;
+            margin-left: 10px;
+        }
     }
 
     @keyframes gradientAnimation {
@@ -423,9 +440,14 @@ h2 {
         @include gradientText;
     }
 
-    p {
-        font-size: 1.2rem;
+    .about-me-text-container {
+        margin: 50px 0;  
+
+        p {
+            font-size: 1.2rem;
+        }
     }
+
 }
 
 .right-side {
@@ -483,6 +505,7 @@ h2 {
 }
 
 .icon {
+    transition: all .3s ease;
     font-size: 6rem;
     color: white;
 }
@@ -496,6 +519,11 @@ h2 {
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    opacity: 0;
+}
+
+.bottom {
+opacity: 0;
 }
 
 
@@ -505,8 +533,27 @@ h2 {
 }
 
 .skill-square {
+    transition: all .3s ease;
     text-align: center;
     width: 200px;
+
+    &:hover {
+        cursor: none;
+    }
+
+    &:hover > .icon   {
+        animation: rubberBand;
+        animation-duration: 1s;
+    }
+
+    p {
+        transition: all .3s ease;
+    }
+
+    &:hover > p  {
+        transition: all .3s ease;
+        color: $secondary;
+    }
 }
 
 .skill-square p {
@@ -728,7 +775,16 @@ nav {
 .fade-in {
     animation: fadeIn 1s;
     animation-delay: 1s;
-    animation-fill-mode:forwards ;
+    animation-fill-mode:forwards;
 }
+
+.fade-in-delay {
+    animation: fadeIn 1s;
+    animation-delay: 1s;
+    animation-fill-mode:forwards;
+    animation-delay: 1s;
+}
+
+
 
 // /////////////////////////////////

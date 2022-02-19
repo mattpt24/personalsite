@@ -11,6 +11,8 @@ const aboutBackButton = document.querySelector(".about-back-btn");
 const aboutLink = document.querySelector(".about-link");
 const aboutDropdownContainer = document.querySelector(".about-me-dropdown");
 const skillsDropdownContainer = document.querySelector(".skills-main-container");
+const skillSquares = document.querySelector(".skills");
+const skillSquaresBottom = document.querySelector(".bottom");
 const skillsLink = document.querySelector(".skills-link");
 const skillsBackButton = document.querySelector(".skills-back-btn");
 
@@ -20,10 +22,15 @@ const skillsBackButton = document.querySelector(".skills-back-btn");
 // SKILLS DROPDOWN 
 const openSkillsDropdown = () => {
     skillsDropdownContainer.classList.add("open-skills-container");
+    skillSquares.classList.add("fade-in");
+    skillSquaresBottom.classList.add("fade-in-delay");
+
 }
 
 const closeSkillsDropdown = () => {
     skillsDropdownContainer.classList.remove("open-skills-container");
+    skillSquares.classList.remove("fade-in");
+    skillSquaresBottom.classList.remove("fade-in-delay");
 }
 
 
