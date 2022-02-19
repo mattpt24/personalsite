@@ -108,6 +108,7 @@ h2 {
                  background: slateblue;
                  background: linear-gradient(90deg, rgb(85, 1, 219) 50%, rgb(146, 37, 255) 100%);
                  z-index: -1;
+                 border-radius: 3px;
              }
 
              &:hover:after {
