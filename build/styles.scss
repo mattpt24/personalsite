@@ -19,7 +19,8 @@ html {
         background-size: 300% 300%;
         animation-fill-mode: forwards;
         animation-delay: .5s;
-        font-size: 5rem;  
+        font-size: 5rem;
+        pointer-events: none;
 }
 
 // NAVBAR
@@ -167,9 +168,6 @@ h2 {
     transform: translateX(-100vw);
 
     .contact-title {
-        font-size: $bigtext;
-        @include gradientText;
-
         @media screen and (max-width:500px) {
             font-size: 3rem;
         }
@@ -186,7 +184,7 @@ h2 {
        margin-top: 20px;
 
        &::selection {
-           background: none;
+           background: none; 
            color: $secondary;
        }
     }
@@ -203,8 +201,8 @@ h2 {
 
     .contact-close-btn {
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 10px;
+        right: -10px;
         background: none;
         outline: none;
         border: none;
@@ -221,24 +219,34 @@ h2 {
     .social-icons {
         display: flex;
         justify-content: center;
-        gap: 2rem;
+        gap: 1.4rem;
         margin-top: 40px;
+
     }
 
     .icon {
         transition: all .3s ease;
-        background: $primary;
-        color: white;
-        font-size: $mediumtext;
-        padding: 10px;
-        border-radius: 100%;
+        background: none;
+        color: $light;
+        font-size: 2.2rem;
+        padding: 10px 12px;
+
 
         &:hover {
             transition: all .3s ease;
-            background: $secondary;
+            color: $secondary;
+            transform: translateY(-10px);
         }
     }
 }
+
+.social-icons:hover .icon {
+    opacity: 0.25;
+  }
+  
+  .social-icons .icon:hover {
+    opacity: 1; 
+  }
 
 .open-contact-container {
     transition: all 1s ease;
@@ -411,7 +419,7 @@ h2 {
     text-decoration: none;
     position: absolute;
     top: 10px;
-    right: -5px;
+    right: -10px;
     z-index: 100;
 
     &:hover {
@@ -485,7 +493,6 @@ h2 {
 
 .skills-main-container {
     position: fixed;
-    background: rgba(0,0,0,0.8);
     height: 100vh;
     display: flex;
     justify-content: space-evenly;
@@ -495,11 +502,17 @@ h2 {
     position: relative;
 
     .skills-close-btn {
+        transition: all .3s ease;
         position: absolute;
         top: 10px;
-        right: 0;
+        right: -10px;
         background: none;
-        color: $secondary;
+        color: $light;
+
+        &:hover {
+            transition: all .3s ease;
+            color: $secondary;
+        }
 
     }
 }
@@ -589,7 +602,9 @@ button {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0,0,0,0.97);
+    background: url("../../skills-bg.png"); 
+    background-size: 120%;
+    background-position: center center; 
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -629,10 +644,16 @@ button {
         left: 0;
         height: 100vh;
         justify-content: center;
+        background-size: cover;
+        background-position: left center;
     }
     
     .skills {
         display: none;
+    }
+
+    .skills-cv-btn {
+        background: $secondary;
     }
     
     
