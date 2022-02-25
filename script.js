@@ -15,7 +15,22 @@ const skillSquares = document.querySelector(".skills");
 const skillSquaresBottom = document.querySelector(".bottom");
 const skillsLink = document.querySelector(".skills-link");
 const skillsBackButton = document.querySelector(".skills-back-btn");
+const portfolioLink = document.querySelector(".portfolio-link");
+const portfolioDropdownContainer = document.querySelector(".portfolio-dropdown");
+const portfolioBackButton = document.querySelector(".portfolio-back-button");
+const portfolioCardsContainer = document.querySelector(".portfolio-cards-container")
 
+
+// PORTFOLIO DROPDOWN 
+const openPortfolioDropdown = () => {
+    portfolioDropdownContainer.classList.add("open-portfolio-container");
+    portfolioCardsContainer.classList.add("fade-in");
+}
+
+const closePortfolioDropdown = () => {
+    portfolioDropdownContainer.classList.remove("open-portfolio-container");
+    portfolioCardsContainer.classList.remove("fade-in");
+}
 
 
 
@@ -32,6 +47,8 @@ const closeSkillsDropdown = () => {
     skillSquares.classList.remove("fade-in");
     skillSquaresBottom.classList.remove("fade-in-delay");
 }
+
+
 
 
 
@@ -99,6 +116,8 @@ aboutLink.addEventListener("click", openAboutDropdown);
 aboutBackButton.addEventListener("click", closeAboutDropdown);
 skillsLink.addEventListener("click", openSkillsDropdown);
 skillsBackButton.addEventListener("click", closeSkillsDropdown);
+portfolioLink.addEventListener("click", openPortfolioDropdown);
+portfolioBackButton.addEventListener("click", closePortfolioDropdown);
 
 
 
