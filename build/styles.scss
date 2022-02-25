@@ -21,6 +21,11 @@ html {
         animation-delay: .5s;
         font-size: 5rem;
         pointer-events: none;
+
+        @media screen and (max-width: 600px) {
+            font-size: 3.5rem;
+            margin-top: 20px;
+        }
 }
 
 // NAVBAR
@@ -139,6 +144,12 @@ h2 {
 
     .get-in-touch-btn {
         @include button($primary, $light);
+        margin-bottom: 30px;
+
+        &:hover {
+            background: $secondary;
+            color: #222;
+        }
     }
 }
 
@@ -628,7 +639,8 @@ button {
 transform: translateY(100vh);
     height: 100vh !important;
     padding: 50px;
-    background: #000000;
+    background: url("../../portfolio-bg.png");
+    background-size: cover;
         display: flex;
     justify-content: center;
     align-items: center;
@@ -779,6 +791,10 @@ transform: translateY(100vh);
     .mobile-hidden {
         display: none;
     }
+
+    .mobile-invisible {
+        visibility: hidden;
+    }
 }
 
 .open-portfolio-container {
@@ -919,7 +935,9 @@ nav {
     }
 
 
-
+.portfolio-dropdown {
+    background: url("../../portfolio-bg-mobile.png")
+}
     
 
 }
