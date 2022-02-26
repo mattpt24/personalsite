@@ -5,12 +5,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: url("../../mycursor.png"), auto;
 }
 
 html {
     scroll-behavior: smooth;
     font-family: $font1;
 }
+
 
 .dropdown-titles {
     @include gradientText;
@@ -138,6 +140,7 @@ h2 {
         &:hover {
             background: none;
             color: $secondary;
+            cursor: url("../../mylightcursor.png"), auto;
         }
     }
 
@@ -149,6 +152,7 @@ h2 {
         &:hover {
             background: $secondary;
             color: #222;
+            cursor: url("../../mycursor.png"), auto;
         }
     }
 }
@@ -204,6 +208,10 @@ h2 {
     .copy-btn {
     @include button($primary, $light);
     margin: 20px;
+
+    &:hover {
+        cursor: url("../../mylightcursor.png"), auto;
+    }
     }
 
     .copied-text {
@@ -224,7 +232,7 @@ h2 {
         &:hover {
             transition: all .3s ease;
             color: $secondary;
-            cursor: pointer;
+            cursor: url("../../mylightcursor.png"), auto;
         }
     }
 
@@ -364,6 +372,7 @@ h2 {
         &:hover {
             transition: all .3s ease;
             margin-left: 10px;
+            cursor: url("../../mycursor.png"), auto;
         }
     }
 
@@ -437,6 +446,7 @@ h2 {
     &:hover {
         transition: all .3s ease;
         color: $secondary;
+        cursor: url("../../mylightcursor.png"), auto;
     }
 }
 
@@ -524,6 +534,7 @@ h2 {
         &:hover {
             transition: all .3s ease;
             color: $secondary;
+            cursor: url("../../mylightcursor.png"), auto;
         }
 
     }
@@ -678,7 +689,7 @@ transform: translateY(100vh);
     &:hover {
         transition: all .4s ease;
         color: $secondary;
-        cursor: pointer;
+        cursor: url("../../mylightcursor.png"), auto;
     }
 }
 
@@ -756,7 +767,7 @@ transform: translateY(100vh);
     transition: all .4s ease;
     background: mediumspringgreen;
     color: #222;
-    cursor: pointer;
+    cursor: url("../../mylightcursor.png"), auto;;
 }
 
 @media screen and (max-width: 1000px) {
