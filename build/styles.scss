@@ -179,8 +179,8 @@ h2 {
     text-align: center;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    z-index: 98;
+    flex-direction: column; 
+    z-index: 100;
     transform: translateX(-100vw);
 
     .contact-title {
