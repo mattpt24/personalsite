@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     cursor: url("../../mycursor.png"), auto;
+    text-decoration: none;
 }
 
 html {
@@ -432,6 +433,7 @@ h2 {
         transition: all .3s ease;
         background: $secondary;
         border-color: $secondary;
+        cursor: url("../../mycursor.png"), auto;
     }
 }
 
@@ -501,6 +503,43 @@ h2 {
     transition: all 1s ease;
     transform: translateX(0);
 }
+
+
+.pizza-popup {
+    transition: all 1s ease;
+    position: absolute;
+    top: 60%;
+    background: rgb(0,0,0);
+background: linear-gradient(-170deg, rgba(0,0,0,1) 50%, rgba(132,24,240,1) 100%);
+animation: pizzaPopUpBG 1s infinite;
+background-size: 200% 200%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    box-shadow: 0 0 10px $primary;
+    opacity: 0;
+    pointer-events: none;
+
+    .pizza-slice {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        animation: pizzaAnimation 1s infinite;
+    }
+
+}
+
+
+.pizza-popup-active {
+    transition: all .5s ease;
+    opacity: 1;
+    pointer-events: all;
+}
+
+
 
 
 /////////////////////////////////////
@@ -573,9 +612,6 @@ opacity: 0;
     text-align: center;
     width: 200px;
 
-    &:hover {
-        cursor: none;
-    }
 
     &:hover > .icon   {
         animation: rubberBand;
@@ -961,6 +997,35 @@ nav {
 
 
 // ANIMATIONS //////////////////
+
+@keyframes pizzaAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+   50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes pizzaPopUpBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50%{
+background-position: 100% 50%;
+    }
+
+    100% {
+background-position: 0% 50%;
+    }
+}
 
 @keyframes enterText {
     from {

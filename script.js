@@ -18,8 +18,24 @@ const skillsBackButton = document.querySelector(".skills-back-btn");
 const portfolioLink = document.querySelector(".portfolio-link");
 const portfolioDropdownContainer = document.querySelector(".portfolio-dropdown");
 const portfolioBackButton = document.querySelector(".portfolio-back-button");
-const portfolioCardsContainer = document.querySelector(".portfolio-cards-container")
+const portfolioCardsContainer = document.querySelector(".portfolio-cards-container");
+const pizza = document.querySelector(".pizza");
+const pizzaPopUp = document.querySelector(".pizza-popup");
+const pizzaSlice = document.querySelector(".pizza-slice");
+const pizzaPopUpMessage = document.querySelector(".pizza-popup-message");
 
+
+// PIZZA DROPDOWN 
+
+const openPizzaPopUp = () => {
+    pizzaPopUp.classList.add("pizza-popup-active");
+}
+
+const closePizzaPopUp = () => {
+    pizzaPopUp.classList.remove("pizza-popup-active");
+    pizzaPopUpMessage.innerText = "Yummy!";
+    pizza.style.pointerEvents = "none";
+}
 
 // PORTFOLIO DROPDOWN 
 const openPortfolioDropdown = () => {
@@ -118,6 +134,9 @@ skillsLink.addEventListener("click", openSkillsDropdown);
 skillsBackButton.addEventListener("click", closeSkillsDropdown);
 portfolioLink.addEventListener("click", openPortfolioDropdown);
 portfolioBackButton.addEventListener("click", closePortfolioDropdown);
+pizza.addEventListener("click", openPizzaPopUp);
+pizzaSlice.addEventListener("click", closePizzaPopUp);
+
 
 
 
