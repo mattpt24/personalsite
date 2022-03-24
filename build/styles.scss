@@ -965,7 +965,12 @@ nav {
             }
         }
 
+        .left-side {
+            background-size: cover;
+        }
+
         .right-side {
+            display: none;
             box-sizing: border-box;
             width: 100vw;
             height: 40vh;
