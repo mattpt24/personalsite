@@ -1,3 +1,5 @@
+@import "./fonts.scss";
+
 $primary: #8418F0;
 $secondary:  rgb(0, 250, 154);
 $dark: #222222;
@@ -9,7 +11,13 @@ $mediumtext: 1.7rem;
 $bigtext: 7.5rem;
 
 
-$font1: 'Urbanist', sans-serif;
+$font1: 'circular-light';
+$font2: 'circular-regular';
+$font3: 'circular-bold';
 $bold: 900;
 $medium: 600;
 $regular: 300;
+
+
+$tablet: 700px;
+$mobile: 500px;

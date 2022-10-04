@@ -1,5 +1,7 @@
 @import "./variables.scss";
 @import "./mixins.scss";
+@import "./fonts.scss";
+
 
 * {
     margin: 0;
@@ -24,11 +26,18 @@ html {
         animation-delay: .5s;
         font-size: 5rem;
         pointer-events: none;
+        font-family:$font3;
 
         @media screen and (max-width: 600px) {
             font-size: 3.5rem;
             margin-top: 20px;
         }
+}
+
+.divider {
+    color: $primary;
+    margin: 0 .5rem;
+    font-family: $font3;
 }
 
 // NAVBAR
@@ -95,6 +104,7 @@ h2 {
         list-style: none;
         text-align: center;
         align-items: center;
+        font-family: $font1;
 
          .nav-link{
             transition: all .3s ease;
@@ -112,7 +122,7 @@ h2 {
                  bottom: 5px;
                  right: 0;
                  width: 0%;
-                 height: 40px;
+                 height: 45px;
                  background: slateblue;
                  background: linear-gradient(90deg, rgb(85, 1, 219) 50%, rgb(146, 37, 255) 100%);
                  z-index: -1;
@@ -321,9 +331,9 @@ h2 {
     }
 
     .hero-title {
+        font-family: $font3;
         font-size: $bigtext;
         font-weight: bold;
-        letter-spacing: 10px;
     }
 
     .sml {
@@ -370,6 +380,8 @@ h2 {
         animation-delay: 1s;
         background: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(96, 0, 250) 50%, rgba(0,255,113,1) 100%);
         background-size: 500% 500%;
+        padding: .8rem 1.3rem;
+        border-radius: 100%;
 
         &:hover {
             transition: all .3s ease;
@@ -470,6 +482,7 @@ h2 {
 
     .about-me-title {
         font-size: 4rem;
+        font-family: $font1;
         @include gradientText;
     }
 
@@ -478,6 +491,9 @@ h2 {
 
         p {
             font-size: 1.2rem;
+            @media screen and (max-width: $mobile ) {
+                font-size: 1rem;
+            }
         }
     }
 
@@ -926,7 +942,8 @@ nav {
         .hero-left {
             width: 100vw;
             height: 100vh;
-            padding: 30px;
+            padding: 90px 30px 30px 30px;
+            text-align: center;
             background-position: center center;
 
             .hero-subtitle {
