@@ -323,7 +323,7 @@ h2 {
         height: 100vh;
         background: $primary;
         z-index: 999;
-        animation: entranceAnimation2 .5s ease-in-out;
+        animation: entranceAnimation2 .5s ease-out;
         animation-fill-mode: forwards;
         animation-delay: 1.25s;
     }
