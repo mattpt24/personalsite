@@ -300,6 +300,46 @@ h2 {
     z-index: 1;
     overflow: hidden;
 
+    &:after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #5f19a4;
+        z-index: 999;
+        animation: entranceAnimation2 .5s ease-in-out;
+        animation-fill-mode: forwards;
+        animation-delay: 1s;
+    }
+    
+    &:before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: $primary;
+        z-index: 999;
+        animation: entranceAnimation2 .5s ease-in-out;
+        animation-fill-mode: forwards;
+        animation-delay: 1.25s;
+    }
+    
+    @keyframes entranceAnimation2 {
+        from {
+            height: 100vh;
+            pointer-events: none;
+        }
+    
+        to {
+            height: 0;
+            pointer-events: none;
+        }
+    }
+
 
 
     .hero-left,
