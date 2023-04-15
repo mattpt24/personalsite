@@ -40,12 +40,10 @@ const closePizzaPopUp = () => {
 // PORTFOLIO DROPDOWN 
 const openPortfolioDropdown = () => {
     portfolioDropdownContainer.classList.add("open-portfolio-container");
-    portfolioCardsContainer.classList.add("fade-in");
 }
 
 const closePortfolioDropdown = () => {
     portfolioDropdownContainer.classList.remove("open-portfolio-container");
-    portfolioCardsContainer.classList.remove("fade-in");
 }
 
 
@@ -53,15 +51,11 @@ const closePortfolioDropdown = () => {
 // SKILLS DROPDOWN 
 const openSkillsDropdown = () => {
     skillsDropdownContainer.classList.add("open-skills-container");
-    skillSquares.classList.add("fade-in");
-    skillSquaresBottom.classList.add("fade-in-delay");
 
 }
 
 const closeSkillsDropdown = () => {
     skillsDropdownContainer.classList.remove("open-skills-container");
-    skillSquares.classList.remove("fade-in");
-    skillSquaresBottom.classList.remove("fade-in-delay");
 }
 
 

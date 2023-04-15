@@ -114,31 +114,18 @@ h2 {
              position: relative;
              z-index: 0;
              padding: 10px 10px;
-
-             &:after {
-                 transition: all .3s ease;
-                 content: "";
-                 position: absolute;
-                 bottom: 5px;
-                 right: 0;
-                 width: 0%;
-                 height: 45px;
-                 background: slateblue;
-                 background: linear-gradient(90deg, rgb(85, 1, 219) 50%, rgb(146, 37, 255) 100%);
-                 z-index: -1;
-                 border-radius: 3px;
-             }
-
-             &:hover:after {
-                 transition: all .3s ease;
-                 width: 100%;
-                 left: 0;
-             }
-
-             &:hover {
-                 transition: all .3s ease;
-             }
          }
+    }
+
+    .nav-links:hover .nav-link {
+        transition: all .3s ease;
+        opacity: .3;
+    }
+
+    .nav-links .nav-link:hover {
+        transition: all .3s ease;
+        opacity: 1;
+        color: $secondary;
     }
 
     .close-btn {
@@ -415,15 +402,16 @@ h2 {
         // animation-delay: 1s;
         background: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(96, 0, 250) 50%, rgba(0,255,113,1) 100%);
         background-size: 500% 500%;
-        padding: .8rem 1.3rem;
-        border-radius: 100%;
+        padding: .5rem 1rem;
+        font-size: 1.2rem;
+        border-radius: 10px;
         animation: pulseEffect 1s infinite;
         animation-timing-function: ease-out;
 
 
         &:hover {
             transition: all .3s ease;
-            margin-left: 10px;
+            opacity: .6;
             cursor: url("../../mycursor.png"), auto;
         }
     }
@@ -663,11 +651,9 @@ background-size: 200% 200%;
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    opacity: 0;
 }
 
 .bottom {
-opacity: 0;
 }
 
 
@@ -683,6 +669,17 @@ opacity: 0;
 
 
     &:hover > .icon   {
+        color: $secondary!important;
+    }
+
+    span {
+        transition: all .3s ease;
+        color: $primary!important;
+    }
+
+    &:hover > span {
+        transition: all .3s ease;
+        color: $secondary!important;
         animation: rubberBand;
         animation-duration: 1s;
     }
@@ -703,11 +700,13 @@ opacity: 0;
 }
 
 .skills-section-footer {
-    margin: 0 auto;
+    margin: 0rem auto;
     text-align: center;
 
     p {
         padding-bottom: 20px;
+        opacity: .7;
+        margin: .5rem 0;
     }
 }
 
@@ -752,11 +751,12 @@ button {
 
 .portfolio-dropdown {
     transition: all 1s ease;
-transform: translateY(100vh);
+    transform: translateY(100vh);
     min-height: 100vh!important;
     padding: 50px;
     background: url("../../portfolio-bg.png");
     background-size: cover;
+    background-position: bottom center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -768,10 +768,7 @@ transform: translateY(100vh);
     z-index: 100;
 }
 
-.portfolio-cards-container {
-    opacity: 0;
-    animation-fill-mode: forwards;
-}
+
 
 .portfolio-dropdown {
     text-align: center;
@@ -799,7 +796,6 @@ transform: translateY(100vh);
 }
 
 .portfolio-row {
-    background: #000;
     display: flex;
     margin-bottom: 30px;
     justify-content: center;
@@ -809,11 +805,18 @@ transform: translateY(100vh);
 .card {
     transition: all .4s ease;
     position: relative;
-    width: 380px;
+    width: 400px;
+    height: 200px;
     box-shadow: 0 0 10px $primary;
     overflow: hidden;
     border-radius: 10px;
     margin-right: 2rem;
+
+
+    &:hover {
+        transition: all .3s ease;
+        box-shadow: 0 0 30px $primary;
+    }
 }
 
 .card img {
@@ -821,6 +824,9 @@ transform: translateY(100vh);
     display: block;
     width: 100%;
     height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center center;
 }
 
 .card-text {
@@ -830,7 +836,7 @@ transform: translateY(100vh);
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: #8418f07d;
     backdrop-filter: blur(5px);
     display: flex;
     flex-direction: column;
@@ -839,11 +845,12 @@ transform: translateY(100vh);
     color: white;
     opacity: 0;
     pointer-events: none;
-}
-
-.card:hover {
-    transition: all .4s ease;
-    box-shadow: 0 0 15px $secondary;
+    border-radius: 10px;
+    
+    @media screen and (max-width: 600px) {
+        justify-content: space-between;
+        padding: .5rem 1rem;
+    }
 }
 
 .card:hover > .card-text {
@@ -876,16 +883,22 @@ transform: translateY(100vh);
 }
 
 @media screen and (max-width: 1000px) {
+
     .portfolio-row {
         flex-direction: column;
         margin-bottom : 0;
     }
+
+    .portfolio-title {
+        font-size: 3.8rem!important;
+    }
     
     .card {
-        width: 80vw;
+        width: 90vw;
         height: 12vh;
         margin-right: 0;
-        margin-bottom: 30px;
+        margin-bottom: 1.6rem;
+        box-shadow: 0 0 20px $primary;
     }
     
     .card img {
@@ -898,10 +911,12 @@ transform: translateY(100vh);
     
     .card-text {
         opacity: 1;
-        background: rgba(0,0,0,0.8);
+        background: #8418f0a9;
         flex-direction: row;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        padding: .5rem 1rem;
+        backdrop-filter: blur(0);
     }
     
     .mobile-hidden {
