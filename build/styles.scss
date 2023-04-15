@@ -364,10 +364,11 @@ h2 {
     }
 
     .sml {
-        font-size: $smalltext;
-        font-weight: $medium;
-        letter-spacing:normal;
+        font-size: $mediumtext;
         color: $light;
+        padding: 10px 0;
+        font-weight: lighter;
+        font-family: $font1;
     }
 
     .large {
